@@ -109,6 +109,75 @@ footer{
     color:#666;
 }
 
+/* 联系我 */
+
+.contact-card{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.contact-desc{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-form label{
+    font-weight:600;
+    margin-bottom:5px;
+    display:block;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px 15px;
+    border:1px solid #dcdfe6;
+    border-radius:8px;
+    font-size:15px;
+    font-family:inherit;
+    transition:.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border-color:var(--main);
+    box-shadow:0 0 0 3px rgba(37,99,235,.12);
+}
+
+.contact-form textarea{
+    resize:vertical;
+    min-height:150px;
+}
+
+.submit-btn{
+    width:180px;
+    border:none;
+    background:var(--main);
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-2px);
+}
+
+.tip{
+    font-size:13px;
+    color:#888;
+}
 </style>
 </head>
 <body>
@@ -207,26 +276,87 @@ footer{
 
 <section>
 
-<h2 class="section-title">留言板</h2>
+    <h2 class="section-title">联系我</h2>
 
-<div id="giscus"></div>
+    <div class="contact-card">
 
-<script src="https://giscus.app/client.js"
-        data-repo="zhangleyi604/workhome"
-        data-repo-id="R_kgDOSnQ-_A"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOSnQ-_M4C9znA"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>
-	
+        <p class="contact-desc">
+            如果您对我的课程作业、学习成果或网站内容有任何建议，
+            欢迎填写下方表单与我联系。
+            提交的信息仅发送至我的邮箱，不会公开显示。
+        </p>
+
+        <form
+            class="contact-form"
+            action="https://formsubmit.co/你的邮箱@qq.com"
+            method="POST">
+
+            <!-- FormSubmit配置 -->
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="个人主页收到新的留言">
+
+            <input
+                type="hidden"
+                name="_captcha"
+                value="false">
+
+            <input
+                type="hidden"
+                name="_template"
+                value="table">
+
+            <input
+                type="hidden"
+                name="_next"
+                value="thankyou.html">
+
+            <div>
+                <label>姓名</label>
+                <input
+                    type="text"
+                    name="姓名"
+                    required>
+            </div>
+
+            <div>
+                <label>邮箱</label>
+                <input
+                    type="email"
+                    name="邮箱"
+                    required>
+            </div>
+
+            <div>
+                <label>单位 / 学校（选填）</label>
+                <input
+                    type="text"
+                    name="单位">
+            </div>
+
+            <div>
+                <label>留言内容</label>
+                <textarea
+                    name="留言内容"
+                    required></textarea>
+            </div>
+
+            <button
+                type="submit"
+                class="submit-btn">
+                提交留言
+            </button>
+
+            <p class="tip">
+                您提交的信息仅用于交流沟通，不会公开展示。
+            </p>
+
+        </form>
+
+    </div>
+
 </section>
 
 </div>
